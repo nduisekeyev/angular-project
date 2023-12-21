@@ -1,9 +1,24 @@
 <div class="content">
   <h2>List of users here from Users component:</h2>
+
+  <button (click)="(stopButton)">Stop button</button>
+
   <ul *ngFor="let user of users; index as i">
     <li>{{ i + 1 }} {{ user.name }}</li>
+
+    <!-- @if block conditionals -->
+    @if (user.id === 1) {
+    <strong style="color: green">Online</strong>
+    } @else if (user.id === 2 ) {
+    <strong style="color: red"> Disabled </strong>
+    } @else {<strong style="color: gray">Not Online</strong
+    >}
   </ul>
-  <button (click)="(stopButton)">Stop button</button>
+
+  <!-- @for block - repeaters -->
+  @for (user of users; track user.id) {
+  {{ user.name }}
+  }
 
   <div class="client-content">
     <h2>User Parent component</h2>
