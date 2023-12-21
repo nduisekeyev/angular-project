@@ -5,4 +5,16 @@
       {{ user.name }}
     </li>
   </ul>
+  <button (click)="(stopButton)">Stop button</button>
+
+  <div class="client-content">
+    <h2>User Parent component</h2>
+    <label for="messageInput">Enter message for Client:</label>
+    <input type="text" id="messageInput" [(ngModel)]="messageForClient" />
+    <button (click)="sendMessageToClient()">Send Message to Client</button>
+    <app-client
+      [messageFromParent]="messageForClient"
+      (messageToParent)="receiveMessageFromClient($event)"
+    ></app-client>
+  </div>
 </div>
