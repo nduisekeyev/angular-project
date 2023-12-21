@@ -1,9 +1,7 @@
 <div class="content">
   <h2>List of users here from Users component:</h2>
-  <ul *ngFor="let user of users">
-    <li>
-      {{ user.name }}
-    </li>
+  <ul *ngFor="let user of users; index as i">
+    <li>{{ i + 1 }} {{ user.name }}</li>
   </ul>
   <button (click)="(stopButton)">Stop button</button>
 
